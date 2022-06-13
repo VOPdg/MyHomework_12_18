@@ -18,25 +18,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
 @Tag("demowebshop")
-public class DemowebshopTests {
-
-    static String login = "qaguru@qa.guru",
-            password = "qaguru@qa.guru1",
-            authCookieName = "NOPCOMMERCE.AUTH";
-
-    @BeforeAll
-    static void configure() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
-        Configuration.baseUrl = "http://demowebshop.tricentis.com";
-        RestAssured.baseURI = "http://demowebshop.tricentis.com";
-    }
-
-    @AfterEach
-    void afterEach() {
-        closeWebDriver();
-    }
-
+public class DemowebshopTests extends TestBase {
     @Test
     @DisplayName("Successful authorization to some demowebshop (UI)")
     void loginTest() {
