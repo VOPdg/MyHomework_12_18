@@ -35,7 +35,8 @@ dependencies {
             "org.slf4j:slf4j-simple:1.7.36"
     )
 }
-
-tasks.withType(Test) {
-    useJUnitPlatform()
+task demowebshop_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "demowebshop"
+    }
 }
